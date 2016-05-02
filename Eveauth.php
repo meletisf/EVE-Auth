@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
 /**
  * EVE Authenticator
  * =================
@@ -96,9 +96,9 @@ class Eveauth
 		curl_setopt($curlObject, CURLOPT_RETURNTRANSFER, true );
 		if( $payload['method'] == 'POST' ) {
 			$fieldsAsString = '';
-        	foreach($payload['fields'] as $key => $val) {
-            	$fieldsAsString .= $key.'='.$val.'&';
-        	}
+        		foreach($payload['fields'] as $key => $val) {
+            			$fieldsAsString .= $key.'='.$val.'&';
+        		}
 			curl_setopt($curlObject, CURLOPT_POST, 1);
 			curl_setopt($curlObject, CURLOPT_POSTFIELDS, $fieldsAsString);
 		}
